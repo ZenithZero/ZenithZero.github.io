@@ -13,17 +13,31 @@ Img:<br>
 <input type="text" name="imgLink" id="img"><br>
 Title:<br>
 <input type="text" name="title" id="titleIn">
-<button id="submit" onClick="buttonSub()">Create HTMLL Code!!</button> 
+<button id="submit" onClick="buttonSub()">Create HTML Code</button> 
 
 </form>
+<p id="disp">CODE:
+    </p>
 <script>
 function buttonSub(){
-var url = document.GetElementById("url").innerHTML;
-var img = document.GetElementById("img");
+var url = document.GetElementById("url").value;
+//var img = document.GetElementById("img");
 //alert(url);
 alert("test");
-
+document.getElemmentById("disp").innerHTML = url;
 }
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

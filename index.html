@@ -2,29 +2,37 @@
 <style>
 </style>
 <html>
-
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_21ehd4WA5jK9PAG7BNDcp");
+   })();
+</script>
 
 
 <body>
-<form><br>
+<br>
 URL Link:<br>
-<input type="text" name="urlLink" id="url"><br>
+<input type="text" id="pgURL"><br>
 Img:<br>
-<input type="text" name="imgLink" id="img"><br>
+<input type="text" id="img"><br>
 Title:<br>
-<input type="text" name="title" id="titleIn">
-<button id="submit" onClick="buttonSub()">Create HTML Code</button> 
+<input type="text" id="titleIn">
+<button id="submit" onclick="buttonSub()">Email Me The Code</button> 
 
-</form>
-<p id="disp">CODE:
+
+<p id="disp">
     </p>
 <script>
 function buttonSub(){
-var url = document.GetElementById("url").value;
-//var img = document.GetElementById("img");
-//alert(url);
-alert("test");
-document.getElemmentById("disp").innerHTML = url;
+var urlTEXT = document.getElementById("pgURL").value;
+var imgURL = document.getElementById("img").value;
+var titleText = document.getElementById("titleIn").value;
+    var template_params = {
+      message: '<a href="'+urlTEXT+'">'+'<img src="'+imgURL+'" height="250px" class="title"><p><strong>'+titleText+'</strong><p></a>'
+      };
+
+     emailjs.send("gmail","htmlcode",template_params);
 }
 </script>
 </body>

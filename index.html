@@ -29,7 +29,7 @@ var urlTEXT = document.getElementById("pgURL").value;
 var imgURL = document.getElementById("img").value;
 var titleText = document.getElementById("titleIn").value;
     var template_params = {
-      message: '<a href="'+urlTEXT+'">'+'<img src="'+imgURL+'" height="250px" class="title"><p><strong>'+titleText+'</strong><p></a>'
+      message: '<a href="'+urlTEXT+'">'+'<img src="'+imgURL+'" height="250px" class="imgTile"><p><strong>'+titleText+'</strong><p></a>'
       };
 
      emailjs.send("gmail","htmlcode",template_params);

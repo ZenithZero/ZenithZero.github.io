@@ -1,51 +1,661 @@
-<!DOCTYPE html>
-<style>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" /> 
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<title>Stress Analysis Report</title>
+<style type="text/css" media="all">
+body,p,table,th,td,h1,h2,h3,h4,h5,input{font-weight: normal; font-size: 10pt; font-family: Tahoma, Arial, Helvetica, sans-serif}
+body{color: #000000; background-color: #ffffff}
+h1{font-weight: bold; font-size: 180%; margin-bottom: 1em}
+h2{font-weight: bold; font-size: 150%; margin-bottom: 0.6em}
+h3{font-weight: bold; font-size: 125%; margin-bottom: 0.5em}
+h4{font-weight: bold; font-size: 115%; margin-bottom: 0.5em}
+h5{font-weight: bold; margin-bottom: 0.5em}
+p{margin: 0.5em 0em 0.3em 0em; line-height: 100%}
+blockquote{margin: 0em 0em 0em 0.5em; font-size: 100%; line-height: 100%; direction: ltr}
+.ta{border: dodgerblue 1px solid; border-collapse: collapse; background-color: #d9e6ff}
+.ta td,.ta th{border: dodgerblue 1px solid; padding: 2pt; valign: top}
+img.p{cursor: pointer}
+img.z{width: 400px}
 </style>
-<html>
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("user_21ehd4WA5jK9PAG7BNDcp");
-   })();
-</script>
-
-
+<style type="text/css" media="print">
+.unprinted{display: none}
+</style>
+<script type="text/javascript">function aa(elem) {
+var list = elem.parentNode.parentNode.getElementsByTagName("div");
+if (list.length > 0){
+  var st = list[0].style;
+  if (st)
+    if (st.display == "none"){
+      st.display = "";
+      elem.src = "Images/minus.png";
+    }else{
+      st.display = "none";
+      elem.src = "Images/plus.png";
+    }
+}}function zoom(w) {
+var oNodes = document.getElementsByTagName("img");
+if (oNodes){
+  var oNode;
+  for (var i=0; oNodes.length > i; i++){
+    oNode = oNodes[i];
+    if (oNode.className == "z"){
+      if (oNode.style)
+        oNode.style.width = w;
+      oNode.width = w;
+    }
+  }
+}}</script> 
+</head>
 <body>
-<br>
-URL Link:<br>
-<input type="text" id="pgURL"><br>
-Img:<br>
-<input type="text" id="img"><br>
-Title:<br>
-<input type="text" id="titleIn">
-<button id="submit" onclick="buttonSub()">Email Me The Code</button> 
+<p class="unprinted">Image Width (pixels): <input type="button" value="320" onclick="zoom('320px')" />
+<input type="button" value="400" onclick="zoom('400px')" />
+<input type="button" value="640" onclick="zoom('640px')" />
+<input type="button" value="800" onclick="zoom('800px')" />
+<input type="button" value="1024" onclick="zoom('1024px')" />
+<input type="button" value="1280" onclick="zoom('1280px')" />
+<input type="button" value="Fit Width" onclick="zoom('100%')" />
+<input type="button" value="Original" onclick="zoom('640px')" /></p>
+<hr class="unprinted" /> 
+<h1>Stress Analysis Report</h1>
+<p style="text-align:right"><img src="Images\Autodesk_Logo_Black.png" alt="" /></p> <table class="ta">
+	<tr>
+		<td>Analyzed File:</td>
+		<td>Pontoon MK1.ipt</td>
+	</tr>
+	<tr>
+		<td>Autodesk Inventor Version:</td>
+		<td>2016 (Build 200138000, 138)</td>
+	</tr>
+	<tr>
+		<td>Creation Date:</td>
+		<td>5/16/2016, 7:18 PM</td>
+	</tr>
+	<tr>
+		<td>Simulation Author:</td>
+		<td>fibon</td>
+	</tr>
+	<tr>
+		<td>Summary:</td>
+		<td></td>
+	</tr> 
+</table>
+<hr />
+<div>
+<h3><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Project Info (iProperties)</h3>
+<div style="display:">
+<blockquote>
+  <div>
+  <h4><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Summary</h4>
+  <div style="display:">
+  <blockquote><table class="ta">
+    <tr><td>Author</td><td>fibon</td></tr>
+  </table>
+  </blockquote>
+  </div></div> 
+  <div>
+  <h4><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Project</h4>
+  <div style="display:">
+  <blockquote><table class="ta">
+    <tr><td>Part Number</td><td>Pontoon MK1</td></tr><tr><td>Designer</td><td>fibon</td></tr><tr><td>Cost</td><td>$0.00</td></tr><tr><td>Date Created</td><td>5/16/2016</td></tr>
+  </table>
+  </blockquote>
+  </div></div> 
+  <div>
+  <h4><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Status</h4>
+  <div style="display:">
+  <blockquote><table class="ta">
+    <tr><td>Design Status</td><td>WorkInProgress</td></tr>
+  </table>
+  </blockquote>
+  </div></div> 
+  <div>
+  <h4><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Physical</h4>
+  <div style="display:">
+  <blockquote><table class="ta">
+    <tr><td>Material</td><td>PLA</td></tr><tr><td>Density</td><td>0.046875 lbmass/in^3</td></tr><tr><td>Mass</td><td>0.317834 lbmass</td></tr><tr><td>Area</td><td>28.6183 in^2</td></tr><tr><td>Volume</td><td>6.78046 in^3</td></tr><tr><td>Center of Gravity</td><td>x=2.23637 in<br/>y=-0.950158 in<br/>z=0.179326 in</td></tr>
+  </table>
+  <p>Note: Physical values could be different from Physical values used by FEA reported below.</p>
+  </blockquote>
+  </div></div> 
+</blockquote>
+</div>
+</div> 
+<hr />
+<div>
+<h2><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Simulation:1</h2>
+<div style="display:">
+<blockquote>
+  <p><b>General objective and settings:</b></p>
+  <table class="ta">
+    <tr>
+      <td>Design Objective</td>
+      <td>Single Point</td>
+    </tr>
+    <tr>
+      <td>Simulation Type</td>
+      <td>Static Analysis</td>
+    </tr>
+    <tr>
+      <td>Last Modification Date</td>
+      <td>5/16/2016, 7:16 PM</td>
+    </tr>
+    <tr>
+      <td>Detect and Eliminate Rigid Body Modes</td>
+      <td>No</td>
+    </tr> 
+  </table>
+  <p><br/><b>Mesh settings:</b></p>
+  <table class="ta">
+    <tr>
+      <td>Avg. Element Size (fraction of model diameter)</td>
+      <td>0.1</td>
+    </tr>
+	<tr>
+      <td>Min. Element Size (fraction of avg. size)</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <td>Grading Factor</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td>Max. Turn Angle</td>
+      <td>60 deg</td>
+    </tr>
+    <tr>
+      <td>Create Curved Mesh Elements</td>
+      <td>Yes</td>
+    </tr>
+  </table>
+  <div>
+  <h3><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Material(s)</h3>
+  <div style="display:">
+  <blockquote>
+    <table class="ta">
+    <tr>
+      <td>Name</td>
+      <td colspan="2">PLA</td>
+    </tr>
+    <tr>
+      <td rowspan="3">General</td>
+      <td>Mass Density</td>
+      <td>0.046875 lbmass/in^3</td>
+    </tr>
+    <tr>
+      <td>Yield Strength</td>
+      <td>1236 psi</td>
+    </tr>
+    <tr>
+      <td>Ultimate Tensile Strength</td>
+      <td>751.9 psi</td>
+    </tr>
+    <tr>
+      <td rowspan="3">Stress</td>
+      <td>Young's Modulus</td>
+      <td>0.05406 ksi</td>
+    </tr>
+    <tr>
+      <td>Poisson's Ratio</td>
+      <td>0 ul</td>
+    </tr>
+    <tr>
+      <td>Shear Modulus</td>
+      <td>0.02703 ksi</td>
+    </tr><!--
+    <tr>
+      <td rowspan="3">Stress Thermal</td>
+      <td>Expansion Coefficient</td>
+      <td>0.0000000555556 ul/f</td>
+    </tr>
+    <tr>
+      <td>Thermal Conductivity</td>
+      <td>0.000577789 btu/( ft hr f )</td>
+    </tr>
+    <tr>
+      <td>Specific Heat</td>
+      <td>0.0000238846 btu/( lbmass f )</td>
+    </tr>-->
+    <tr>
+      <td>Part Name(s)</td>
+      <td colspan="2">Pontoon MK1</td>
+    </tr>
+  </table>
 
+  </blockquote>
+  </div></div> 
+  <div>
+  <h3><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Operating conditions</h3>
+  <div style="display:">
+  <blockquote>
+    <div>
+  <h4><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Force:1</h4>
+  <div style="display:">
+  <blockquote>
+  <table class="ta">
+    <tr>
+      <td>Load Type</td>
+      <td>Force</td>
+    </tr>
+    <tr><td>Magnitude</td><td>7.000 lbforce</td></tr><tr><td>Vector X</td><td>-0.513 lbforce</td></tr><tr><td>Vector Y</td><td>6.981 lbforce</td></tr><tr><td>Vector Z</td><td>0.000 lbforce</td></tr>
+  </table>
+  <div>
+  <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Selected Face(s)</h5>
+  <div style="display:">
+    <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Load_0_0.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Load_0_0.png" alt="" /></a></p>
+    <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Load_0_0_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Load_0_0_rev.png" alt="" /></a></p> 
+  </div></div> 
+  </blockquote>
+  </div></div>
 
-<p id="disp">
-    </p>
-<script>
-function buttonSub(){
-var urlTEXT = document.getElementById("pgURL").value;
-var imgURL = document.getElementById("img").value;
-var titleText = document.getElementById("titleIn").value;
-    var template_params = {
-      message: '<div width = "400px" height = "450px" id="'+titleText+'"><a href="'+urlTEXT+'">'+'<img src="'+imgURL+'" height="250px" class="imgTile"><p><strong>'+titleText+'</strong><p></a></div>'
-      };
+    <div>
+  <h4><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Fixed Constraint:1</h4>
+  <div style="display:">
+  <blockquote>
+  <table class="ta">
+    <tr>
+      <td>Constraint Type</td>
+      <td>Fixed Constraint</td>
+    </tr>
+    
+  </table>
+  <div>
+  <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Selected Face(s)</h5>
+  <div style="display:">
+    <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Constraint_0_1.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Constraint_0_1.png" alt="" /></a></p>
+    <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Constraint_0_1_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Constraint_0_1_rev.png" alt="" /></a></p> 
+  </div></div> 
+  </blockquote>
+  </div></div>
 
-     emailjs.send("gmail","htmlcode",template_params);
-}
-</script>
+  
+  
+  </blockquote>
+  </div></div> 
+  <div>
+  <h3><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Results</h3>
+  <div style="display:">
+    <blockquote>
+       
+    <div>
+    <h4><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp; Reaction Force and Moment on Constraints</h4>
+    <div style="display:">
+    <blockquote>
+    <table class="ta">
+      <tr>
+        <td rowspan="2"><b>Constraint Name</b></td>
+        <td colspan="2"><b>Reaction Force</b></td>
+        <td colspan="2"><b>Reaction Moment</b></td>
+      </tr>
+      <tr>
+        <td><b>Magnitude</b></td>
+        <td><b>Component (X,Y,Z)</b></td>
+        <td><b>Magnitude</b></td>
+        <td><b>Component (X,Y,Z)</b></td>
+      </tr>
+        <tr>
+    <td rowspan="3">Fixed Constraint:1</td>
+    <td rowspan="3">7 lbforce</td>
+    <td>0.513494 lbforce</td>
+    <td rowspan="3">1.17692 lbforce ft</td>
+    <td>0.131654 lbforce ft</td>
+  </tr>
+  <tr>
+    <td>-6.98114 lbforce</td>
+    <td>0.00967821 lbforce ft</td>
+  </tr>
+  <tr>
+    <td>0 lbforce</td>
+    <td>-1.1695 lbforce ft</td>
+  </tr>
+
+    </table>
+    </blockquote>
+    </div></div> 
+    <div>
+    <h4><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Result Summary</h4>
+    <div style="display:">
+    <blockquote>
+    <table class="ta">
+      <tr>
+        <td><b>Name</b></td>
+        <td><b>Minimum</b></td>
+        <td><b>Maximum</b></td>
+      </tr>
+      <tr>
+        <td>Volume</td>
+        <td colspan="2">6.78044 in^3</td>
+      </tr>
+      <tr>
+        <td>Mass</td>
+        <td colspan="2">0.317833 lbmass</td>
+      </tr>
+      <tr>
+        <td>Von Mises Stress</td>
+        <td>0.0000000165226 ksi</td>
+        <td>0.808071 ksi</td>
+      </tr> 
+      <tr>
+        <td>1st Principal Stress</td>
+        <td>-0.00329484 ksi</td>
+        <td>0.730407 ksi</td>
+      </tr> 
+      <tr>
+        <td>3rd Principal Stress</td>
+        <td>-0.403647 ksi</td>
+        <td>0.00923058 ksi</td>
+      </tr> 
+      <tr>
+        <td>Displacement</td>
+        <td>0 in</td>
+        <td>41.8009 in</td>
+      </tr> 
+      <tr>
+        <td>Safety Factor</td>
+        <td>0.835999 ul</td>
+        <td>15 ul</td>
+      </tr> 
+      <tr>
+        <td>Stress XX</td>
+        <td>-0.20764 ksi</td>
+        <td>0.503183 ksi</td>
+      </tr> 
+      <tr>
+        <td>Stress XY</td>
+        <td>-0.140151 ksi</td>
+        <td>0.37471 ksi</td>
+      </tr> 
+      <tr>
+        <td>Stress XZ</td>
+        <td>-0.189061 ksi</td>
+        <td>0.357002 ksi</td>
+      </tr> 
+      <tr>
+        <td>Stress YY</td>
+        <td>-0.186733 ksi</td>
+        <td>0.386337 ksi</td>
+      </tr> 
+      <tr>
+        <td>Stress YZ</td>
+        <td>-0.259297 ksi</td>
+        <td>0.117988 ksi</td>
+      </tr> 
+      <tr>
+        <td>Stress ZZ</td>
+        <td>-0.0967123 ksi</td>
+        <td>0.0285444 ksi</td>
+      </tr> 
+      <tr>
+        <td>X Displacement</td>
+        <td>-1.01606 in</td>
+        <td>24.6636 in</td>
+      </tr> 
+      <tr>
+        <td>Y Displacement</td>
+        <td>-0.0117225 in</td>
+        <td>37.262 in</td>
+      </tr> 
+      <tr>
+        <td>Z Displacement</td>
+        <td>-0.60012 in</td>
+        <td>5.49909 in</td>
+      </tr> 
+      <tr>
+        <td>Equivalent Strain</td>
+        <td>0.000000212051 ul</td>
+        <td>11.2494 ul</td>
+      </tr> 
+      <tr>
+        <td>1st Principal Strain</td>
+        <td>-0.0609476 ul</td>
+        <td>13.511 ul</td>
+      </tr> 
+      <tr>
+        <td>3rd Principal Strain</td>
+        <td>-7.46666 ul</td>
+        <td>0.170747 ul</td>
+      </tr> 
+      <tr>
+        <td>Strain XX</td>
+        <td>-3.84091 ul</td>
+        <td>9.30786 ul</td>
+      </tr> 
+      <tr>
+        <td>Strain XY</td>
+        <td>-2.59251 ul</td>
+        <td>6.93138 ul</td>
+      </tr> 
+      <tr>
+        <td>Strain XZ</td>
+        <td>-3.49724 ul</td>
+        <td>6.60381 ul</td>
+      </tr> 
+      <tr>
+        <td>Strain YY</td>
+        <td>-3.45418 ul</td>
+        <td>7.14644 ul</td>
+      </tr> 
+      <tr>
+        <td>Strain YZ</td>
+        <td>-4.79647 ul</td>
+        <td>2.18255 ul</td>
+      </tr> 
+      <tr>
+        <td>Strain ZZ</td>
+        <td>-1.78898 ul</td>
+        <td>0.528013 ul</td>
+      </tr> 
+    </table>
+    </blockquote>
+    </div></div> 
+    <div>
+    <h4><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Figures</h4>
+    <div style="display:">
+    <blockquote>
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Von Mises Stress</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_1.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_1.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_1_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_1_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;1st Principal Stress</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_6.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_6.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_6_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_6_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;3rd Principal Stress</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_8.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_8.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_8_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_8_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Displacement</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_2.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_2.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_2_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_2_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Safety Factor</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_57.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_57.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_57_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_57_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Stress XX</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_9.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_9.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_9_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_9_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Stress XY</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_10.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_10.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_10_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_10_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Stress XZ</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_11.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_11.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_11_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_11_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Stress YY</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_12.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_12.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_12_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_12_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Stress YZ</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_13.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_13.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_13_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_13_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Stress ZZ</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_14.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_14.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_14_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_14_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;X Displacement</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_3.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_3.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_3_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_3_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Y Displacement</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_4.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_4.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_4_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_4_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Z Displacement</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_5.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_5.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_5_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_5_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Equivalent Strain</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_80.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_80.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_80_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_80_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;1st Principal Strain</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_81.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_81.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_81_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_81_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;3rd Principal Strain</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_83.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_83.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_83_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_83_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Strain XX</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_58.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_58.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_58_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_58_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Strain XY</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_59.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_59.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_59_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_59_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Strain XZ</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_60.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_60.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_60_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_60_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Strain YY</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_61.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_61.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_61_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_61_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Strain YZ</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_62.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_62.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_62_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_62_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div> 
+      <div>
+      <h5><img class="p" src="Images/minus.png" onclick="aa(this)" alt="" /> &nbsp;Strain ZZ</h5>
+      <div style="display:">
+      <blockquote>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_63.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_63.png" alt="" /></a></p>
+        <p><a href="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_63_rev.png"><img class="z" src="Images/Pontoon MK1 Stress Analysis Report 5_16_2016/0/Result_0_63_rev.png" alt="" /></a></p> 
+      </blockquote>
+      </div></div>  
+    </blockquote>
+    </div></div> 
+
+    </blockquote>
+  </div></div> 
+</blockquote>
+</div>
+</div>
+
+<p><br/>C:\Users\fibon\Documents\Inventor\IND STUDY\Pontoon MK1.ipt</p>
+<hr class="unprinted" />
+<p class="unprinted">Image Width (pixels): <input type="button" value="320" onclick="zoom('320px')" />
+<input type="button" value="400" onclick="zoom('400px')" />
+<input type="button" value="640" onclick="zoom('640px')" />
+<input type="button" value="800" onclick="zoom('800px')" />
+<input type="button" value="1024" onclick="zoom('1024px')" />
+<input type="button" value="1280" onclick="zoom('1280px')" />
+<input type="button" value="Fit Width" onclick="zoom('100%')" />
+<input type="button" value="Original" onclick="zoom('640px')" /></p> 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
